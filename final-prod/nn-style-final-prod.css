@@ -3,7 +3,7 @@
   color-scheme: light;
   --nn-node-color: 96, 165, 250;       /* rgb tuple for nodes (sky-400) */
   --nn-link-color: 96, 165, 250;       /* Blue-400 for links */
-  --nn-pulse-color: 167, 139, 250;      /* For pulses: 56, 189, 248 (cyan-400)  | 139, 92, 246 (violet-500) 167, 139, 250 (violet-400) */ 
+  --nn-pulse-color: 153, 246, 228    /* For pulses: 56, 189, 248 (cyan-400)  | 139, 92, 246 (violet-500) 167, 139, 250 (violet-400) */ 
   --nn-background-solid: #f8f9fc;
 
   /* Soft radial gradient background (light theme) */
@@ -17,7 +17,7 @@ body[data-theme="dark"] {
   color-scheme: dark;
   --nn-node-color: 147, 197, 253;      /* sky-300 for nodes on dark */
   --nn-link-color: 147, 197, 253;      /* lighter link lines on dark */
-  --nn-pulse-color: 56, 189, 248;      /* cyan-400 */
+  --nn-pulse-color: 153, 246, 248;      /* cyan-400 */
   --nn-background-solid: #0f172a;      /* slate-900 */
 
   /* Soft radial gradient background (dark theme) */

@@ -57,7 +57,7 @@
     // --- Pulses (traversing links) ---
     PULSE_MAX_ACTIVE: 2,          // (Responsive) Max active pulses
     PULSE_POOL_SIZE: 15,
-    PULSE_SPEED: 500,             // Pulse travel speed (px/second along links)
+    PULSE_SPEED: 400,             // Pulse travel speed (px/second along links)
     PULSE_SPAWN_EVERY_MS: 1200,    // Base interval between pulse spawns (ms)
     PULSE_RADIUS: 4,              // Pulse glow sprite radius
 
@@ -218,7 +218,7 @@
       // Read theme-based colors from CSS variables
       this.NODE_RGB = readCssRGBTuple('--nn-node-color', '96, 165, 250');
       this.LINK_RGB = readCssRGBTuple('--nn-link-color', '96, 165, 250');
-      this.PULSE_RGB = readCssRGBTuple('--nn-pulse-color', '56, 189, 248');
+      this.PULSE_RGB = readCssRGBTuple('--nn-pulse-color', '153, 246, 228');
 
       // Device pixel ratio (clamped)
       this.dpr = clamp(window.devicePixelRatio || 1, 1, CONFIG.DPR_MAX);
