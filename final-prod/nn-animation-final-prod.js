@@ -51,8 +51,8 @@
     NODE_RADIUS_BASE: 12,         // Base radius (px) for node glow sprite
     NODE_NEAR_SCALE: 1.0,         // Scale for nearest nodes (smaller)
     NODE_FAR_SCALE: 1.6,          // Scale for farthest nodes (larger)
-    BRIGHTNESS_NEAR: 0.85,         // Relative brightness (alpha) for nearest nodes
-    BRIGHTNESS_FAR: 0.25,         // Relative brightness for farthest nodes
+    BRIGHTNESS_NEAR: 0.75,         // Relative brightness (alpha) for nearest nodes
+    BRIGHTNESS_FAR: 0.2,         // Relative brightness for farthest nodes
 
     // --- Pulses (traversing links) ---
     PULSE_MAX_ACTIVE: 2,          // (Responsive) Max active pulses
@@ -78,8 +78,8 @@
     BG_DRIFT_PHASE: -1.0,         // Phase offset for background drift vs global (decorrelation)
 
     // --- Lines (foreground network) ---
-    LINE_ALPHA_MIN: 0.4,         // Opacity for very short links (nearby nodes)
-    LINE_ALPHA_MAX: 0.085,         // Opacity for longest links
+    LINE_ALPHA_MIN: 0.35,         // Opacity for very short links (nearby nodes)
+    LINE_ALPHA_MAX: 0.08,         // Opacity for longest links
     LINE_WIDTH_NEAR: 1.5,           // Line width for nearest links
     LINE_WIDTH_FAR: 3,            // Line width for far links
 
@@ -94,7 +94,7 @@
     EDGE_FADE_BG: true,          // Radial edge fade for background layer (usually off)
     EDGE_FADE_DYNAMIC_INNER: 0.8, // Inner radius (fraction of half-size) where dynamic layer fade begins
     EDGE_FADE_DYNAMIC_OUTER: 1.0, // Outer radius (fraction) where dynamic layer is fully faded
-    EDGE_FADE_STATIC_INNER: 0.95, // Inner radius for static layer fade
+    EDGE_FADE_STATIC_INNER: 0.9, // Inner radius for static layer fade
     EDGE_FADE_STATIC_OUTER: 1.0,  // Outer radius for static layer fade end
     EDGE_FADE_BG_INNER: 0.4,      // (unused if EDGE_FADE_BG is false)
     EDGE_FADE_BG_OUTER: 0.9
@@ -948,6 +948,15 @@
     const stored = localStorage.getItem('nn-theme');
     if (stored === 'dark') document.body.dataset.theme = 'dark';
     else if (stored === 'light') document.body.dataset.theme = 'light';
+    
+    // Ensure engine picks up current theme colors on load (before any clicks)
+    engine.NODE_RGB = readCssRGBTuple('--nn-node-color', engine.NODE_RGB);
+    engine.LINK_RGB = readCssRGBTuple('--nn-link-color', engine.LINK_RGB);
+    engine.PULSE_RGB = readCssRGBTuple('--nn-pulse-color', engine.PULSE_RGB);
+    engine._buildSprites();
+    engine._drawBackground();
+    engine._drawStaticLayer();
+
     btn.addEventListener('click', () => {
       const cur = (document.body.dataset.theme === 'dark') ? 'light' : 'dark';
       document.body.dataset.theme = cur;
