@@ -33,8 +33,8 @@
 
     // --- Degree caps / density controls ---
     MAX_LINK_DISTANCE: 350,       // (Responsive) Max link reach, overwritten by scaler
-    MAX_LINKS_DYNAMIC: 6,         // Per-node cap on edges involving moving nodes
-    MAX_LINKS_STATIC: 5,          // Per-node cap on edges among static nodes
+    MAX_LINKS_DYNAMIC: 5,         // Per-node cap on edges involving moving nodes
+    MAX_LINKS_STATIC: 6,          // Per-node cap on edges among static nodes
     BG_LINK_MAX_DEGREE: 4,        // Max degree for background nodes (keep sparse)
     BG_LINK_MAX_DISTANCE: 400,    // Max link length in background layer
     BG_LINK_ALPHA: 0.08,          // Low alpha for static background wiring
@@ -55,22 +55,22 @@
     BRIGHTNESS_FAR: 0.15,         // Relative brightness for farthest nodes
 
     // --- Pulses (traversing links) ---
-    PULSE_MAX_ACTIVE: 4,          // (Responsive) Max active pulses
-    PULSE_POOL_SIZE: 12,
+    PULSE_MAX_ACTIVE: 2,          // (Responsive) Max active pulses
+    PULSE_POOL_SIZE: 15,
     PULSE_SPEED: 500,             // Pulse travel speed (px/second along links)
-    PULSE_SPAWN_EVERY_MS: 1000,    // Base interval between pulse spawns (ms)
+    PULSE_SPAWN_EVERY_MS: 1200,    // Base interval between pulse spawns (ms)
     PULSE_RADIUS: 4,              // Pulse glow sprite radius
 
     // --- Loop & motion (elliptical paths) ---
     LOOP_DURATION_MS: 28000,      // Full loop duration in milliseconds (visual repeat period)
     ELLIPSE_NEAR_CYCLES: 1,       // Ellipse orbits per loop for near layer (integer for seamless return)
     ELLIPSE_MID_CYCLES: 1,        // Ellipse orbits per loop for mid layer
-    ELLIPSE_RADIUS_NEAR_X: 80,    // Horizontal ellipse radius for near nodes (baseline minDim=900)
+    ELLIPSE_RADIUS_NEAR_X: 60,    // Horizontal ellipse radius for near nodes (baseline minDim=900)
     ELLIPSE_RADIUS_NEAR_Y: 30,    // Vertical ellipse radius for near nodes (baseline)
-    ELLIPSE_RADIUS_MID_X: 40,     // Horizontal radius for mid-layer nodes (baseline)
+    ELLIPSE_RADIUS_MID_X: 30,     // Horizontal radius for mid-layer nodes (baseline)
     ELLIPSE_RADIUS_MID_Y: 15,     // Vertical radius for mid-layer nodes (baseline)
     RANDOMIZE_NODE_PHASES: true,
-    STARTING_PHASE_RANDOMIZER: 0.15,  // How much to randomize the initial phase by this fraction of 2π
+    STARTING_PHASE_RANDOMIZER: 0.2,  // How much to randomize the initial phase by this fraction of 2π
     GLOBAL_DRIFT_RATIO: 0.0,     // Global slow drift as % of min(viewport) (applied via CSS translate)
     BG_DRIFT_RATIO: 0.00,         // Background layer drift magnitude (fraction of minDim)
     BG_DRIFT_SPEED_MULT: 0.0,     // Background drift speed relative to foreground
