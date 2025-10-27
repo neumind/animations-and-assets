@@ -1,0 +1,75 @@
+/* nn-style-final-v3.css — layered canvases, theme gradients, and minimal UI */
+:root {
+  color-scheme: light;
+  --nn-node-color: 96, 165, 250;       /* rgb tuple for nodes (sky-400) */
+  --nn-link-color: 96, 165, 250;       /* Blue-400 for links */
+  --nn-pulse-color: 167, 139, 250;      /* For pulses: 56, 189, 248 (cyan-400)  | 139, 92, 246 (violet-500) 167, 139, 250 (violet-400) */ 
+  --nn-background-solid: #f8f9fc;
+
+  /* Soft radial gradient background (light theme) */
+  --nn-background-light:
+    radial-gradient(circle at 18% 24%, rgba(59, 130, 246, 0.08), transparent 60%),
+    radial-gradient(circle at 82% 32%, rgba(14, 165, 233, 0.12), transparent 65%),
+    var(--nn-background-solid);
+}
+
+body[data-theme="dark"] {
+  color-scheme: dark;
+  --nn-node-color: 147, 197, 253;      /* sky-300 for nodes on dark */
+  --nn-link-color: 147, 197, 253;      /* lighter link lines on dark */
+  --nn-pulse-color: 56, 189, 248;      /* cyan-400 */
+  --nn-background-solid: #0f172a;      /* slate-900 */
+
+  /* Soft radial gradient background (dark theme) */
+  --nn-background-dark:
+    radial-gradient(circle at 20% 22%, rgba(129, 140, 248, 0.15), transparent 55%),
+    radial-gradient(circle at 78% 28%, rgba(14, 165, 233, 0.12), transparent 62%),
+    var(--nn-background-solid);
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--nn-background-light);
+  transition: background 250ms ease, color 250ms ease;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  overflow: hidden;
+}
+body[data-theme="dark"] { background: var(--nn-background-dark); }
+
+/* Container hosting three layered canvases */
+#canvas-container {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* treat as background */
+}
+#canvas-container canvas {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Theme toggle button styling */
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  padding: .5rem .9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.1);
+  background: rgba(255,255,255,.65);
+  backdrop-filter: blur(10px);
+  font-size: .95rem;
+  letter-spacing: .01em;
+  cursor: pointer;
+}
+body[data-theme="dark"] #theme-toggle {
+  background: rgba(17,24,39,.5);
+  color: #e5e7eb;
+  border-color: rgba(255,255,255,.12);
+}
