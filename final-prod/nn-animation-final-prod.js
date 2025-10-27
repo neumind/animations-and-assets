@@ -51,8 +51,8 @@
     NODE_RADIUS_BASE: 12,         // Base radius (px) for node glow sprite
     NODE_NEAR_SCALE: 1.0,         // Scale for nearest nodes (smaller)
     NODE_FAR_SCALE: 1.6,          // Scale for farthest nodes (larger)
-    BRIGHTNESS_NEAR: 0.8,         // Relative brightness (alpha) for nearest nodes
-    BRIGHTNESS_FAR: 0.15,         // Relative brightness for farthest nodes
+    BRIGHTNESS_NEAR: 0.85,         // Relative brightness (alpha) for nearest nodes
+    BRIGHTNESS_FAR: 0.25,         // Relative brightness for farthest nodes
 
     // --- Pulses (traversing links) ---
     PULSE_MAX_ACTIVE: 2,          // (Responsive) Max active pulses
@@ -78,8 +78,8 @@
     BG_DRIFT_PHASE: -1.0,         // Phase offset for background drift vs global (decorrelation)
 
     // --- Lines (foreground network) ---
-    LINE_ALPHA_MIN: 0.3,         // Opacity for very short links (nearby nodes)
-    LINE_ALPHA_MAX: 0.08,         // Opacity for longest links
+    LINE_ALPHA_MIN: 0.4,         // Opacity for very short links (nearby nodes)
+    LINE_ALPHA_MAX: 0.085,         // Opacity for longest links
     LINE_WIDTH_NEAR: 1.5,           // Line width for nearest links
     LINE_WIDTH_FAR: 3,            // Line width for far links
 
